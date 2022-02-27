@@ -1,8 +1,8 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 
-# Ne pas oublier les id wifi
-const char* ssid = "";
+// Ne pas oublier les id wifi
+const char* ssid = ";
 const char* password = "";
 
 // ENDPOINTS
