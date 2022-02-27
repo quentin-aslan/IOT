@@ -2,7 +2,7 @@
 #include <HTTPClient.h>
 
 // Ne pas oublier les id wifi
-const char* ssid = ";
+const char* ssid = "";
 const char* password = "";
 
 // ENDPOINTS
@@ -71,7 +71,7 @@ void loop() {
 
         // ALL
         char datas[150];
-        sprintf(datas, "{\"humidity\":\"%f\",\"temperature\":\"%f\",\"realFeel\":\"%f\",\"location\":\"%s\",\"location\":\"%s\"}", humidityFloat, temperatureFloat, realFeelFloat, DHT22_LOCATION);
+        sprintf(datas, "{\"humidity\":\"%f\",\"temperature\":\"%f\",\"realFeel\":\"%f\",\"location\":\"%s\"}", humidityFloat, temperatureFloat, realFeelFloat, DHT22_LOCATION);
 
         http.begin(serverName);
         http.addHeader("Content-Type", "application/json");
