@@ -12,7 +12,7 @@ const char* serverName = "http://192.168.1.50:31830/dht22";
 #include "DHT.h"
 #define DHTPIN 25 // PIN OU EST CONNECTER LES DATAS
 #define DHTTYPE DHT22
-#define DHT22_PLACE "DHT22_1" // 1 : SALON, 2 : CHAMBRE (BUREAU)
+#define DHT22_LOCATION "SALON" // 1 : SALON, 2 : CHAMBRE (BUREAU)
 DHT dht(DHTPIN, DHTTYPE);
 
 // Set timer to 30secondes
@@ -71,7 +71,7 @@ void loop() {
 
         // ALL
         char datas[150];
-        sprintf(datas, "{\"humidity\":\"%f\",\"temperature\":\"%f\",\"realFeel\":\"%f\",\"host\":\"%s\"}", humidityFloat, temperatureFloat, realFeelFloat, DHT22_PLACE);
+        sprintf(datas, "{\"humidity\":\"%f\",\"temperature\":\"%f\",\"realFeel\":\"%f\",\"location\":\"%s\",\"location\":\"%s\"}", humidityFloat, temperatureFloat, realFeelFloat, DHT22_LOCATION);
 
         http.begin(serverName);
         http.addHeader("Content-Type", "application/json");
